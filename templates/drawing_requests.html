@@ -35,7 +35,7 @@
             <td><div class="btn text-primary upload-drawing-for-request" data-toggle="modal" data-target="#drawing-modal">Upload</button></div>
             {% if session['role'] in ['Super Admin', 'Design Head'] %}
             <td>
-                <a href="/erp/delete_drawing_request?id={{req[7]}}" class="text-danger"
+                <a href="/delete_drawing_request?id={{req[7]}}" class="text-danger"
                 onclick="return confirm('Are you sure you want to delete this drawing request')"
                 >Delete</a>
             </td>
@@ -114,7 +114,7 @@ aria-hidden="true">
                </div>
            </div>
 
-           <form class="upload-drawing-form" action="/erp/upload_drawing" enctype="multipart/form-data"
+           <form class="upload-drawing-form" action="/upload_drawing" enctype="multipart/form-data"
                  method="post">
                <div class="row mx-0 mb-3 form-group">
                    <div class="col-8 mt-4 p-0">

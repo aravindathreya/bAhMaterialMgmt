@@ -19,7 +19,7 @@ driver = webdriver.Remote(command_executor=url,desired_capabilities={})
 driver.close()   # this prevents the dummy browser
 driver.session_id = session_id
 
-driver.get('https://app.buildahome.in/erp/enter_material')
+driver.get('https://app.buildahome.in/enter_material')
 
 material = Select(driver.find_element('name','material'))
 material.select_by_index(random.randint(1, len(material.options) -1))

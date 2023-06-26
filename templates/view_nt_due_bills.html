@@ -37,8 +37,8 @@
             <td class="stage border-right">{{i['stage']}}</td>
             <td class="total_payable border-right">{{i['total_payable']|int}}</td>
             <td class="">
-                <a href="/erp/approve_nt_bill?bill_id={{i['bill_id']}}" onclick="return confirm('Are you sure you want to approve this request?')"  class="text-success">Approve</a>
-                <a href="/erp/reject_nt_bill?bill_id={{i['bill_id']}}" onclick="return confirm('Are you sure you want to reject this request?')" class="text-danger ml-3">Reject</a>
+                <a href="/approve_nt_bill?bill_id={{i['bill_id']}}" onclick="return confirm('Are you sure you want to approve this request?')"  class="text-success">Approve</a>
+                <a href="/reject_nt_bill?bill_id={{i['bill_id']}}" onclick="return confirm('Are you sure you want to reject this request?')" class="text-danger ml-3">Reject</a>
             </td>
         </tr>
         {% endfor %}

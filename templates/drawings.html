@@ -7,23 +7,23 @@
 <div class="my-4 d-flex">
     {% if 'category' not in request.args or request.args['category'] == 'architect_drawings' %}
         <a href="#" class="btn btn-dark bg-indigo text-white mr-3">Architectural</a>
-        <a href="/erp/drawings?category=structural_drawings" class="btn border-dark mr-3 text-dark">Structural</a>
-        <a href="/erp/drawings?category=electrical_drawings" class="btn border-dark mr-3 text-dark">Electrical</a>
-        <a href="/erp/drawings?category=plumbing_drawings" class="btn border-dark mr-3 text-dark">Plumbing</a>
+        <a href="/drawings?category=structural_drawings" class="btn border-dark mr-3 text-dark">Structural</a>
+        <a href="/drawings?category=electrical_drawings" class="btn border-dark mr-3 text-dark">Electrical</a>
+        <a href="/drawings?category=plumbing_drawings" class="btn border-dark mr-3 text-dark">Plumbing</a>
     {% elif request.args['category'] == 'structural_drawings' %}
-        <a href="/erp/drawings?category=architect_drawings" class="btn border-dark mr-3 text-dark">Architectural</a>
+        <a href="/drawings?category=architect_drawings" class="btn border-dark mr-3 text-dark">Architectural</a>
         <a href="#" class="btn btn-dark bg-indigo text-white mr-3">Structural</a>
-        <a href="/erp/drawings?category=electrical_drawings" class="btn border-dark mr-3 text-dark">Electrical</a>
-        <a href="/erp/drawings?category=plumbing_drawings" class="btn border-dark mr-3 text-dark">Plumbing</a>
+        <a href="/drawings?category=electrical_drawings" class="btn border-dark mr-3 text-dark">Electrical</a>
+        <a href="/drawings?category=plumbing_drawings" class="btn border-dark mr-3 text-dark">Plumbing</a>
     {% elif request.args['category'] == 'electrical_drawings' %}
-        <a href="/erp/drawings?category=architect_drawings" class="btn border-dark mr-3 text-dark">Architectural</a>
-        <a href="/erp/drawings?category=structural_drawings" class="btn border-dark mr-3 text-dark">Structural</a>
+        <a href="/drawings?category=architect_drawings" class="btn border-dark mr-3 text-dark">Architectural</a>
+        <a href="/drawings?category=structural_drawings" class="btn border-dark mr-3 text-dark">Structural</a>
         <a href="#" class="btn btn-dark bg-indigo text-white mr-3">Electrical</a>
-        <a href="/erp/drawings?category=plumbing_drawings" class="btn border-dark mr-3 text-dark">Plumbing</a>
+        <a href="/drawings?category=plumbing_drawings" class="btn border-dark mr-3 text-dark">Plumbing</a>
     {% elif request.args['category'] == 'plumbing_drawings' %}
-        <a href="/erp/drawings?category=architect_drawings" class="btn border-dark mr-3 text-dark">Architectural</a>
-        <a href="/erp/drawings?category=structural_drawings" class="btn border-dark mr-3 text-dark">Structural</a>
-        <a href="/erp/drawings?category=electrical_drawings" class="btn border-dark mr-3 text-dark">Electrical</a>
+        <a href="/drawings?category=architect_drawings" class="btn border-dark mr-3 text-dark">Architectural</a>
+        <a href="/drawings?category=structural_drawings" class="btn border-dark mr-3 text-dark">Structural</a>
+        <a href="/drawings?category=electrical_drawings" class="btn border-dark mr-3 text-dark">Electrical</a>
         <a href="#" class="btn btn-dark bg-indigo text-white mr-3">Plumbing</a>
     {% endif %}
 </div>
@@ -133,7 +133,7 @@
                     </div>
                 </div>
 
-                <form class="d-none upload-drawing-form" action="/erp/upload_drawing" enctype="multipart/form-data"
+                <form class="d-none upload-drawing-form" action="/upload_drawing" enctype="multipart/form-data"
                       method="post">
                     <div class="row mx-0 mb-3 form-group">
                         <div class="col-8 mt-4 p-0">

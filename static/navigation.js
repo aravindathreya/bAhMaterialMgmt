@@ -75,7 +75,7 @@ $(document).ready(function () {
         //     const project = $("#project").val()
         //     if (project.length) {
         //         $.ajax({
-        //             url: '/erp/kyp_material?project_id='+project.toString(),
+        //             url: '/kyp_material?project_id='+project.toString(),
         //             type: "GET",        
         //             success: function (data) {     
         //                 $('.main-wrapper').html(data);
@@ -100,7 +100,7 @@ $(document).ready(function () {
         //     const material = $("#material").val()
         //     if(project.length && material.length) {
         //         $.ajax({
-        //             url: '/erp/view_inventory?project_id='+project.toString()+'&material='+material.toString(),
+        //             url: '/view_inventory?project_id='+project.toString()+'&material='+material.toString(),
         //             type: "GET",        
         //             success: function (data) {        
         //                 $('.main-wrapper').html(data);
@@ -162,7 +162,7 @@ $(document).ready(function () {
             $(".vendor-select").append($("<option></option>"))
             const material_selected = $(this).val().trim()
             $.ajax({
-                    url: '/erp/get_vendors_for_material',
+                    url: '/get_vendors_for_material',
                     type: "POST",
                     dataType: 'json',
                     data: { 'material_selected': material_selected },
@@ -186,7 +186,7 @@ $(document).ready(function () {
 
     function updateSlabArea(project_id) {
         $.ajax({
-            url: '/erp/update_slab_area',
+            url: '/update_slab_area',
             type: "POST",
             dataType: 'json',
             data: {
@@ -220,7 +220,7 @@ $(document).ready(function () {
         if (selected_trade && selected_trade.trim() === '' || project_id.trim() === '') return false;
         $('.milestones_section').find('.milestones_and_percentages_item').remove()
         $.ajax({
-            url: '/erp/get_standard_milestones_and_percentages',
+            url: '/get_standard_milestones_and_percentages',
             type: "POST",
             dataType: 'json',
             data: {
@@ -263,7 +263,7 @@ $(document).ready(function () {
             $(".work-order-trade-select select").empty()
             $(".work-order-trade-select select").append($("<option></option>"))
             $.ajax({
-                url: '/erp/update_trades_for_contractor',
+                url: '/update_trades_for_contractor',
                 type: "POST",
                 dataType: 'json',
                 data: { 'contractor_id': contractor_id },
@@ -333,7 +333,7 @@ $(document).ready(function () {
         $('.main-wrapper').html('')
         $(".main-wrapper").css({background:'linear-gradient(90deg, rgba(173,173,173,1) 0%, rgba(255,255,255,1) 70%)'});
         $.ajax({
-            url: '/erp/create_project',
+            url: '/create_project',
             type: "GET",        
             success: function (data) {         
                 $('.main-wrapper').html(data);
@@ -355,7 +355,7 @@ $(document).ready(function () {
         $('.main-wrapper').html('')
         $(".main-wrapper").css({background:'linear-gradient(90deg, rgba(173,173,173,1) 0%, rgba(255,255,255,1) 70%)'});
         $.ajax({
-            url: '/erp/unapproved_projects',
+            url: '/unapproved_projects',
             type: "GET",        
             success: function (data) {        
                 $('.main-wrapper').html(data);
@@ -377,7 +377,7 @@ $(document).ready(function () {
         $('.main-wrapper').html('')
         $(".main-wrapper").css({background:'linear-gradient(90deg, rgba(173,173,173,1) 0%, rgba(255,255,255,1) 70%)'});
         $.ajax({
-            url: '/erp/archived_projects',
+            url: '/archived_projects',
             type: "GET",        
             success: function (data) {        
                 $('.main-wrapper').html(data);
@@ -399,7 +399,7 @@ $(document).ready(function () {
         $('.main-wrapper').html('')
         $(".main-wrapper").css({background:'linear-gradient(90deg, rgba(173,173,173,1) 0%, rgba(255,255,255,1) 70%)'});
         $.ajax({
-            url: '/erp/projects',
+            url: '/projects',
             type: "GET",        
             success: function (data) {        
                 $('.main-wrapper').html(data);
@@ -423,7 +423,7 @@ $(document).ready(function () {
         $('.main-wrapper').html('')
         $(".main-wrapper").css({background:'linear-gradient(90deg, rgba(173,173,173,1) 0%, rgba(255,255,255,1) 70%)'});
         $.ajax({
-            url: '/erp/create_user',
+            url: '/create_user',
             type: "GET",        
             success: function (data) {        
                 $('.main-wrapper').html(data);
@@ -445,7 +445,7 @@ $(document).ready(function () {
         $('.main-wrapper').html('')
         $(".main-wrapper").css({background:'linear-gradient(90deg, rgba(173,173,173,1) 0%, rgba(255,255,255,1) 70%)'});
         $.ajax({
-            url: '/erp/view_users',
+            url: '/view_users',
             type: "GET",        
             success: function (data) {        
                 $('.main-wrapper').html(data);
@@ -468,7 +468,7 @@ $(document).ready(function () {
         $('.main-wrapper').html('')
         $(".main-wrapper").css({background:'linear-gradient(90deg, rgba(173,173,173,1) 0%, rgba(255,255,255,1) 70%)'});
         $.ajax({
-            url: '/erp/vendor_registration',
+            url: '/vendor_registration',
             type: "GET",        
             success: function (data) {        
                 $('.main-wrapper').html(data);
@@ -490,7 +490,7 @@ $(document).ready(function () {
         $('.main-wrapper').html('')
         $(".main-wrapper").css({background:'linear-gradient(90deg, rgba(173,173,173,1) 0%, rgba(255,255,255,1) 70%)'});
         $.ajax({
-            url: '/erp/view_vendors',
+            url: '/view_vendors',
             type: "GET",        
             success: function (data) {        
                 $('.main-wrapper').html(data);
@@ -513,7 +513,7 @@ $(document).ready(function () {
         $('.main-wrapper').html('')
         $(".main-wrapper").css({background:'linear-gradient(90deg, rgba(173,173,173,1) 0%, rgba(255,255,255,1) 70%)'});
         $.ajax({
-            url: '/erp/kyp_material',
+            url: '/kyp_material',
             type: "GET",        
             success: function (data) {        
                 $('.main-wrapper').html(data);
@@ -536,7 +536,7 @@ $(document).ready(function () {
         $('.main-wrapper').html('')
         $(".main-wrapper").css({background:'linear-gradient(90deg, rgba(173,173,173,1) 0%, rgba(255,255,255,1) 70%)'});
         $.ajax({
-            url: '/erp/enter_material',
+            url: '/enter_material',
             type: "GET",        
             success: function (data) {        
                 $('.main-wrapper').html(data);
@@ -559,7 +559,7 @@ $(document).ready(function () {
         $('.main-wrapper').html('')
         $(".main-wrapper").css({background:'linear-gradient(90deg, rgba(173,173,173,1) 0%, rgba(255,255,255,1) 70%)'});
         $.ajax({
-            url: '/erp/shifting_entry',
+            url: '/shifting_entry',
             type: "GET",        
             success: function (data) {        
                 $('.main-wrapper').html(data);
@@ -581,7 +581,7 @@ $(document).ready(function () {
         $('.main-wrapper').html('')
         $(".main-wrapper").css({background:'linear-gradient(90deg, rgba(173,173,173,1) 0%, rgba(255,255,255,1) 70%)'});
         $.ajax({
-            url: '/erp/view_inventory',
+            url: '/view_inventory',
             type: "GET",        
             success: function (data) {        
                 $('.main-wrapper').html(data);
@@ -604,7 +604,7 @@ $(document).ready(function () {
         $('.main-wrapper').html('')
         $(".main-wrapper").css({background:'linear-gradient(90deg, rgba(173,173,173,1) 0%, rgba(255,255,255,1) 70%)'});
         $.ajax({
-            url: '/erp/view_qs_approval_indents',
+            url: '/view_qs_approval_indents',
             type: "GET",        
             success: function (data) {        
                 $('.main-wrapper').html(data);
@@ -626,7 +626,7 @@ $(document).ready(function () {
         $('.main-wrapper').html('')
         $(".main-wrapper").css({background:'linear-gradient(90deg, rgba(173,173,173,1) 0%, rgba(255,255,255,1) 70%)'});
         $.ajax({
-            url: '/erp/view_approved_indents',
+            url: '/view_approved_indents',
             type: "GET",        
             success: function (data) {        
                 $('.main-wrapper').html(data);
@@ -648,7 +648,7 @@ $(document).ready(function () {
         $('.main-wrapper').html('')
         $(".main-wrapper").css({background:'linear-gradient(90deg, rgba(173,173,173,1) 0%, rgba(255,255,255,1) 70%)'});
         $.ajax({
-            url: '/erp/view_approved_POs',
+            url: '/view_approved_POs',
             type: "GET",        
             success: function (data) {        
                 $('.main-wrapper').html(data);
@@ -671,7 +671,7 @@ $(document).ready(function () {
         $('.main-wrapper').html('')
         $(".main-wrapper").css({background:'linear-gradient(90deg, rgba(173,173,173,1) 0%, rgba(255,255,255,1) 70%)'});
         $.ajax({
-            url: '/erp/view_ph_approved_indents',
+            url: '/view_ph_approved_indents',
             type: "GET",        
             success: function (data) {        
                 $('.main-wrapper').html(data);
@@ -693,7 +693,7 @@ $(document).ready(function () {
         $('.main-wrapper').html('')
         $(".main-wrapper").css({background:'linear-gradient(90deg, rgba(173,173,173,1) 0%, rgba(255,255,255,1) 70%)'});
         $.ajax({
-            url: '/erp/view_deleted_indents',
+            url: '/view_deleted_indents',
             type: "GET",        
             success: function (data) {        
                 $('.main-wrapper').html(data);
@@ -715,7 +715,7 @@ $(document).ready(function () {
         $('.main-wrapper').html('')
         $(".main-wrapper").css({background:'linear-gradient(90deg, rgba(173,173,173,1) 0%, rgba(255,255,255,1) 70%)'});
         $.ajax({
-            url: '/erp/contractor_registration',
+            url: '/contractor_registration',
             type: "GET",        
             success: function (data) {        
                 $('.main-wrapper').html(data);
@@ -737,7 +737,7 @@ $(document).ready(function () {
         $('.main-wrapper').html('')
         $(".main-wrapper").css({background:'linear-gradient(90deg, rgba(173,173,173,1) 0%, rgba(255,255,255,1) 70%)'});
         $.ajax({
-            url: '/erp/view_contractors',
+            url: '/view_contractors',
             type: "GET",        
             success: function (data) {        
                 $('.main-wrapper').html(data);
@@ -760,7 +760,7 @@ $(document).ready(function () {
         $('.main-wrapper').html('')
         $(".main-wrapper").css({background:'linear-gradient(90deg, rgba(173,173,173,1) 0%, rgba(255,255,255,1) 70%)'});
         $.ajax({
-            url: '/erp/create_work_order',
+            url: '/create_work_order',
             type: "GET",        
             success: function (data) {        
                 $('.main-wrapper').html(data);

@@ -12,8 +12,8 @@
             <div class="d-flex">
                 <div class="mb-auto mr-4">
                     <img alt="" height="80" width="80"
-                         onerror="this.src='/erp/static/profile_picture.PNG'"
-                         data-src="/erp/files/contractor_dp_{{contractor[0]}}"
+                         onerror="this.src='/static/profile_picture.PNG'"
+                         data-src="/files/contractor_dp_{{contractor[0]}}"
                          src="./static/profile_picture.PNG" alt=""
                          class="contractor-profile-picture"
                          style="border-radius: 50%">
@@ -33,9 +33,9 @@
                 <div class="mb-2 fs-12"><b>Address</b>: {{contractor[5]}}</div>
             </div>
             <div class="d-flex mt-3 justify-content-end">
-                <a href="/erp/edit_contractor?contractor_id={{contractor[0]}}">Edit</a>
+                <a href="/edit_contractor?contractor_id={{contractor[0]}}">Edit</a>
                 <a onclick="return confirm('Are you sure you want to delete?');"
-                   href="/erp/delete_contractor?contractor_id={{contractor[0]}}" class="text-danger ml-4">Delete</a>
+                   href="/delete_contractor?contractor_id={{contractor[0]}}" class="text-danger ml-4">Delete</a>
             </div>
         </div>
     </div>

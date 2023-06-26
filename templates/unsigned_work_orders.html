@@ -32,11 +32,11 @@
             <td>{{wo['contractor_name']}}</td>
             <td>{{wo['verification_code']}}</td>
             <td>
-                <a href="/erp/sign_wo?wo_id={{wo['id']}}">Sign</a>
+                <a href="/sign_wo?wo_id={{wo['id']}}">Sign</a>
             </td>
             {% if session['role'] == 'Super Admin' %}
             <td>
-                <a class='text-danger' href="/erp/delete_wo?id={{wo['id']}}"
+                <a class='text-danger' href="/delete_wo?id={{wo['id']}}"
                     onclick="return confirm('Are you sure you want to delete this work order')"
                 >
                     Delete

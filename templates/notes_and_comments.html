@@ -31,7 +31,7 @@
     </div>
     <div class="w-100 p-3 overflow-x-auto">
         {% if notes is not none %}
-        <form action="/erp/project_notes" method="post" enctype="multipart/form-data">
+        <form action="/project_notes" method="post" enctype="multipart/form-data">
             <input type="hidden" name="project_id" value="{{request.args['project_id']}}">
 
             <div class="row mx-0 mb-3 form-group p-0">
@@ -72,12 +72,12 @@
                 <span class="my-auto">{{i[2]}} at {{i[1]}} :</span></p>
             <p style="white-space: break-spaces">{{i[0]}}</p>
             {% if i[4]|string != '0' %}
-            <a target="_blank" href="https://app.buildahome.in/erp/files/{{i[4]}}">View attachment</a>
+            <a target="_blank" href="https://app.buildahome.in/files/{{i[4]}}">View attachment</a>
             {% endif %}
 
             
             {% if session['role'] in ['Super Admin','COO'] %}
-            <a href="/erp/delete_note?id={{i[3]}}" class="text-danger">Delete</a>
+            <a href="/delete_note?id={{i[3]}}" class="text-danger">Delete</a>
             {% endif %}
         </div>
         {% endfor %}

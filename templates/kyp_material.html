@@ -15,7 +15,7 @@
     </div>
 
     {% if project is not none %}
-    <form class="my-3 w-100" action="/erp/kyp_material" method="post">
+    <form class="my-3 w-100" action="/kyp_material" method="post">
         <div class="mx-auto mt-4 col-sm-10 col-md-8 p-3 bg-light">Total material quantities for project {{project}}</div>
         <input type="hidden" name="project_id" value="{{project_id}}">
         <div class="row m-3 justify-content-center mt-4 ">

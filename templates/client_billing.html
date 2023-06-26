@@ -33,7 +33,7 @@
                                         <i class="fa fa-check text-white"></i>
                                     </a>
                                     {% else %}
-                                    <btn onclick="set_url('/erp/mark_task_complete?id={{loop.index - 1}}&task_id={{task['id']}}',this);"
+                                    <btn onclick="set_url('/mark_task_complete?id={{loop.index - 1}}&task_id={{task['id']}}',this);"
                                         data-toggle="modal" data-target="#SchedulerModal"
                                         class="btn btn-primary p-1 px-2 my-auto">
                                         <i class="fa fa-check text-white"></i>
@@ -51,11 +51,11 @@
                             <div class="p-3 d-flex justify-content-between">
                                 <div class="my-auto ">
                                     {% if task['paid']|int == 0 and task['due']|int == 0 %}
-                                    <btn onclick="set_url('/erp/mark_task_due?id={{task['id']}}', this);"
+                                    <btn onclick="set_url('/mark_task_due?id={{task['id']}}', this);"
                                         data-toggle="modal" data-target="#SchedulerModal"
                                         class='btn btn-block btn-warning'>Mark as Due</btn>
                                     {% elif task['paid']|int == 0 and task['due']|int == 1 %}
-                                    <btn onclick="set_url('/erp/mark_task_paid?id={{task['id']}}', this);"
+                                    <btn onclick="set_url('/mark_task_paid?id={{task['id']}}', this);"
                                         data-toggle="modal" data-target="#SchedulerModal"
                                         class='btn btn-block btn-primary'>Mark as paid</btn>
                                     {% else %}
@@ -110,7 +110,7 @@
                 <!-- Modal content-->
                 <div class="modal-content">
 
-                    <form method="post" action="/erp/edit_task" class="modal-body">
+                    <form method="post" action="/edit_task" class="modal-body">
                         <h5 class="modal-title p-2"><b>Edit task</b>
                             <button type="button float-right" class="close" data-dismiss="modal">&times;</button>
                         </h5>

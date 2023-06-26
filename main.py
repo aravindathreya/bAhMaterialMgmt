@@ -44,6 +44,7 @@ from dotenv import load_dotenv
 
 # Do not include transportation and laoading unloading in total amount 
 
+load_dotenv()
 
 # Last labour stage id 412
 app = Flask(__name__)

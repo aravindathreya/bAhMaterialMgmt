@@ -7,7 +7,7 @@
                <h4>Edit project</h4>
             </div>
          </div>
-         <form action="/erp/edit_project" method="post" enctype="multipart/form-data">
+         <form action="/edit_project" method="post" enctype="multipart/form-data">
             <div class="row mx-0 mb-3 form-group">
                <div class="col-6">
                   <label for="project_number">Project number</label>
@@ -330,7 +330,7 @@
                <div class="col-6">
                   <input type="file" name="cost_sheet" id="cost_sheet" accept="application/pdf" />
                   <a style="word-break: break-all;" target="_blank"
-                     href="/erp/files/{{p.cost_sheet}}">{{p.cost_sheet}}</a>
+                     href="/files/{{p.cost_sheet}}">{{p.cost_sheet}}</a>
                   <span name="cost_sheet_error" class="d-none" id="cost_sheet_error">Please Upload Cost sheet</span>
                </div>
             </div>
@@ -342,7 +342,7 @@
                   <input type="file" name="site_inspection_report" id="site_inspection_report"
                      accept="application/pdf" />
                   <a style="word-break: break-all;" target="_blank"
-                     href="/erp/files/{{p.site_inspection_report}}">{{p.site_inspection_report}}</a>
+                     href="/files/{{p.site_inspection_report}}">{{p.site_inspection_report}}</a>
                   <span name="site_inspection_report_error" class="d-none" id="site_inspection_report_error">Please
                      Upload Site inspection report</span>
                </div>
@@ -355,7 +355,7 @@
                   <input type="file" name="agreement" id="agreement"
                      accept="application/pdf" />
                   <a style="word-break: break-all;" target="_blank"
-                     href="/erp/files/{{p.agreement}}">{{p.agreement}}</a>
+                     href="/files/{{p.agreement}}">{{p.agreement}}</a>
                   <span name="agreement_error" class="d-none" id="agreement_error">Please
                      Upload Agreement</span>
                </div>
@@ -368,7 +368,7 @@
                   <input type="file" name="area_statement" id="area_statement"
                      accept="application/pdf" />
                   <a style="word-break: break-all;" target="_blank"
-                     href="/erp/files/{{p.area_statement}}">{{p.area_statement}}</a>
+                     href="/files/{{p.area_statement}}">{{p.area_statement}}</a>
                   <span name="agreement_error" class="d-none" id="agreement_error">Please
                      Upload Area statement</span>
                </div>

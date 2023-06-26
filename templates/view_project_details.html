@@ -23,7 +23,7 @@
                         <div>{{x}}</div>
                     {% endfor %}
                     {% elif i in ['Cost Sheet','Agreement','Site Inspection Report','Area Statement']  %}
-                    <a style="word-break: break-all;" target="_blank" href="/erp/files/{{details[i]}}">{{details[i]}}</a>
+                    <a style="word-break: break-all;" target="_blank" href="/files/{{details[i]}}">{{details[i]}}</a>
                     {% elif i=='Is Approved' %}
                         {% if  details[i]|string == "0" %}
                         <b>Not approved</b>
@@ -40,19 +40,19 @@
             <div class="row mx-0 mb-3 form-group">
                 <div class="ml-auto">
                     {% if archived=='0' %}
-                    <a href="/erp/archive_project?project_id={{request.args['project_id']}}&&project_name={{details[0]}}" class="btn btn-secondary mr-2">Archive</a>
+                    <a href="/archive_project?project_id={{request.args['project_id']}}&&project_name={{details[0]}}" class="btn btn-secondary mr-2">Archive</a>
                     {% else %}
-                    <a href="/erp/unarchive_project?project_id={{request.args['project_id']}}&&project_name={{details[0]}}" class="btn btn-secondary mr-2">Unarchive</a>
+                    <a href="/unarchive_project?project_id={{request.args['project_id']}}&&project_name={{details[0]}}" class="btn btn-secondary mr-2">Unarchive</a>
                     {% endif %}
-                    <a href="/erp/edit_project?project_id={{request.args['project_id']}}" class="btn btn-info mr-2">Edit</a>
-                    <a href="/erp/delete_project?project_id={{request.args['project_id']}}" class="btn btn-danger">Delete</a>
+                    <a href="/edit_project?project_id={{request.args['project_id']}}" class="btn btn-info mr-2">Edit</a>
+                    <a href="/delete_project?project_id={{request.args['project_id']}}" class="btn btn-danger">Delete</a>
                 </div>
             </div>
             {% endif %}
             {% if approved=='0' %}
             <div class="row justify-content-center mx-0 my-5">
                 <div class="col-6">
-                    <a class="btn btn-dark btn-block bg-indigo text-white" href="/erp/approve_project?project_id={{request.args['project_id']}}&&project_name={{details[0]}}"
+                    <a class="btn btn-dark btn-block bg-indigo text-white" href="/approve_project?project_id={{request.args['project_id']}}&&project_name={{details[0]}}"
                             onclick="return confirm('Are you sure you want to approve this project')">Approve
                     </a>
                 </div>

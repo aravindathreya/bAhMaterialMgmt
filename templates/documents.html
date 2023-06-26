@@ -26,11 +26,11 @@
             <td>{{i[2]}}</td>
             <td>{{i[4]}}</td>
             <td>
-                <a href="/erp/files/{{i[3]}}" target="_blank">View</a>
+                <a href="/files/{{i[3]}}" target="_blank">View</a>
             </td>
             <td>
                 {% if session['role'] in ['Super Admin'] %}
-                <a href="/erp/delete_project_doc?id={{i[0]}}" class="text-danger" onclick="return confirm('Are you sure')">Delete</a>
+                <a href="/delete_project_doc?id={{i[0]}}" class="text-danger" onclick="return confirm('Are you sure')">Delete</a>
                 {% endif %}
             </td>
 
@@ -44,7 +44,7 @@
 
 </div>
 <div id="add-document" class="col-md-6 mx-5 bg-light py-3 rounded">
-    <form action="/erp/add_document" method="POST" enctype="multipart/form-data">
+    <form action="/add_document" method="POST" enctype="multipart/form-data">
         <input type="hidden" name="project_id" value="{{request.args['project_id']}}">
         <div class="form-group mb-3">
             <label for="name">Name of document</label>

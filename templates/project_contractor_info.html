@@ -24,12 +24,12 @@
         </div>
         {% if data['difference_cost_sheet']|string != ''%}
         <div class="mb-3">
-            <b>View difference cost sheet</b>: <a style="word-break: break-all;" target="_blank" href="/erp/files/{{data['difference_cost_sheet']}}">
+            <b>View difference cost sheet</b>: <a style="word-break: break-all;" target="_blank" href="/files/{{data['difference_cost_sheet']}}">
                 Open
             </a>
         </div>
         {% else %}
-        <form class="p-3 bg-light mb-2 col-12" action="/erp/upload_doc" method="post" enctype="multipart/form-data">
+        <form class="p-3 bg-light mb-2 col-12" action="/upload_doc" method="post" enctype="multipart/form-data">
             Upload difference of cost sheet <br>
             <input type="hidden" name="wo_id" value="{{data['work_order_id']}}">
             <input type="file" name="difference_cost_sheet" required>
@@ -62,7 +62,7 @@
             <div class="w-100 text-right fs-12 mt-2">
                 {{i[3]}} on {{i[4]}}
                 {% if i[5] == session['email'] %}
-                    <a href="/erp/delete_work_order_note?id={{i[0]}}" onclick="return window.confirm('Are you sure?');" class="ml-2 text-danger">Delete</a>
+                    <a href="/delete_work_order_note?id={{i[0]}}" onclick="return window.confirm('Are you sure?');" class="ml-2 text-danger">Delete</a>
                 {% endif %}
             </div>
         </div>
@@ -117,7 +117,7 @@
             </td>
             {% if session['role'] in ['Super Admin'] and 'Debit note' in i[0] %}
                 <td>
-                    <a href="/erp/delete_bill?bill_id={{i[7]}}" onclick="return window.confirm('Are you sure?');" class="btn text-danger">Delete</a>
+                    <a href="/delete_bill?bill_id={{i[7]}}" onclick="return window.confirm('Are you sure?');" class="btn text-danger">Delete</a>
                 </td>            
             {% endif %}
 
@@ -135,7 +135,7 @@
         <div class="modal-content">
 
             <div class="modal-body">
-                <form action="/erp/add_work_order_note" method="post">
+                <form action="/add_work_order_note" method="post">
                     <h5 class="modal-title p-2"><b>Add a note</b>
                         <button type="button float-right" class="close" data-dismiss="modal">&times;</button>
                     </h5>

@@ -95,7 +95,7 @@
                     <td class="item_difference_cost">{{i[14]}}</td>
                     {% if session['role'] in ['Super Admin','COO','Purchase Head'] and 'Shifting entry' not in i[2] %}
                     <td>
-                        <a href="/erp/edit_procurement?procurement_id={{i[0]}}">Edit</a>
+                        <a href="/edit_procurement?procurement_id={{i[0]}}">Edit</a>
                     </td>
                     {% endif %}
                 </tr>

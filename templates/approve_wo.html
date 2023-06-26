@@ -124,7 +124,7 @@
                     <label>View difference cost sheet</label>
                 </div>
                 <div class="col-6">
-                    <a style="word-break: break-all;" target="_blank" href="/erp/files/{{wo[13]}}">
+                    <a style="word-break: break-all;" target="_blank" href="/files/{{wo[13]}}">
                         Open
                     </a>
                 </div>
@@ -137,11 +137,11 @@
                 </div>
                 <div class="col-6">
                     {% if wo[12]|string == ''%}
-                    <a style="word-break: break-all;" target="_blank" href="/erp/files/work_order_{{wo_id}}.pdf">
+                    <a style="word-break: break-all;" target="_blank" href="/files/work_order_{{wo_id}}.pdf">
                         Open
                     </a>
                     {% else %}
-                    <a style="word-break: break-all;" target="_blank" href="/erp/files/{{wo[12]}}">
+                    <a style="word-break: break-all;" target="_blank" href="/files/{{wo[12]}}">
                         Open
                     </a>
                     {% endif %}
@@ -153,7 +153,7 @@
             </div>
             {% endif %}
             <div class="d-flex flex-column h-100 justify-content-start mx-3">
-                <form action="/erp/approve_wo" method="post">
+                <form action="/approve_wo" method="post">
                     <input type="hidden" name="wo_id" value="{{wo_id}}">
                     <div class="d-flex">
                         <button class="mt-3 mr-auto btn btn-success">Approve</button>

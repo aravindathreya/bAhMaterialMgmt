@@ -117,27 +117,27 @@
                     </div>
                 </div>                
                 {% if session['role'] in ['Super Admin','COO','Design Head','Planning','Billing'] %}
-                <a href="/erp/edit_team?project_id={{project[0]}}" class="d-block mt-4 ml-3 pb-2 d-flex team-btn">
+                <a href="/edit_team?project_id={{project[0]}}" class="d-block mt-4 ml-3 pb-2 d-flex team-btn">
                     <ion-icon name="people-outline"></ion-icon>
                     <span class="my-auto ml-2">Team</span></a>
-                <!-- <a href="/erp/client_billing?project_id={{project[0]}}" class="d-block mt-4 ml-3 pb-2 d-flex team-btn">
+                <!-- <a href="/client_billing?project_id={{project[0]}}" class="d-block mt-4 ml-3 pb-2 d-flex team-btn">
                         <ion-icon name="people-outline"></ion-icon>
                         <span class="my-auto ml-2">Client billing</span></a> -->
                 {% endif %}
-                <a href="/erp/project_notes?project_id={{project[0]}}" class="d-block mt-1 ml-3 py-2 d-flex comments-btn"><i class="fa fa-comments-o mr-2"></i><span class="my-auto">Comments & notes</span></a>
-                <a href="/erp/documents?project_id={{project[0]}}" class="d-block mt-4 ml-3 pb-2 d-flex team-btn">
+                <a href="/project_notes?project_id={{project[0]}}" class="d-block mt-1 ml-3 py-2 d-flex comments-btn"><i class="fa fa-comments-o mr-2"></i><span class="my-auto">Comments & notes</span></a>
+                <a href="/documents?project_id={{project[0]}}" class="d-block mt-4 ml-3 pb-2 d-flex team-btn">
                     <ion-icon name="document-outline"></ion-icon>
                     <span class="my-auto ml-2">Documents</span></a>
                 <div class="d-flex w-100 justify-content-between">
                     {% if session['role'] in ['Super Admin','COO','Design Head','Planning','Billing'] %}
                     {% if project[3] == 1 %}                
-                    <a href="/erp/unblock_project?project_id={{project[0]}}" class="d-block mb-auto ml-3 pt-2 d-flex block-btn block-project clickable"><i class="fa fa-ban mr-2"></i><span class="my-auto">Unblock</span></a>                
+                    <a href="/unblock_project?project_id={{project[0]}}" class="d-block mb-auto ml-3 pt-2 d-flex block-btn block-project clickable"><i class="fa fa-ban mr-2"></i><span class="my-auto">Unblock</span></a>                
                     {% else %}
                     <div data-project-id="{{project[0]}}" data-toggle="modal" data-target="#block-modal" class="d-block mb-auto mt-1 ml-3 pt-2 d-flex block-btn block-project clickable"><i class="fa fa-ban mr-2"></i><span class="my-auto">Block</span></div>                
                     {% endif %}
                     {% endif %}
                                 
-                    <a class="px-3 py-2 mt-4 d-block ml-auto view-details" href="/erp/view_project_details?project_id={{project[0]}}" >View details</a>
+                    <a class="px-3 py-2 mt-4 d-block ml-auto view-details" href="/view_project_details?project_id={{project[0]}}" >View details</a>
                 </div>
                
             </div>
@@ -164,18 +164,18 @@
             <td>{{project[2]}}</td>
             <td>{{project[1]}}</td>
             <td>
-                <a href="/erp/view_project_details?project_id={{project[0]}}">View details</a>
+                <a href="/view_project_details?project_id={{project[0]}}">View details</a>
             </td>
             <td>
-                <a href="/erp/project_notes?project_id={{project[0]}}">Comments and notes</a>
+                <a href="/project_notes?project_id={{project[0]}}">Comments and notes</a>
             </td>
             {% if session['role'] in ['Super Admin','COO','Design Head','Planning','Billing'] %}
             <td>
-                <a href="/erp/edit_team?project_id={{project[0]}}">View team</a>
+                <a href="/edit_team?project_id={{project[0]}}">View team</a>
             </td>
             <td>
                 {% if project[3] == 1 %}
-                <a href="/erp/unblock_project?project_id={{project[0]}}" class="btn btn-primary">Unblock</a>
+                <a href="/unblock_project?project_id={{project[0]}}" class="btn btn-primary">Unblock</a>
                 {% else %}
                 <button data-project-id="{{project[0]}}" data-toggle="modal" data-target="#block-modal" class="btn btn-danger block-project">Block</a>
                 {% endif %}
@@ -200,7 +200,7 @@
           </button>
         </div>
         <div class="modal-body">
-            <form method="post" action="/erp/block_project">
+            <form method="post" action="/block_project">
                 <input type="hidden" name="project_id" class="project_id">
                 <textarea name='reason' class="form-control" rows="5" placeholder="Enter reason for blocking project"></textarea>
                 <div class="mt-3">

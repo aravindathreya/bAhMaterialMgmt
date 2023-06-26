@@ -90,7 +90,7 @@ $('.status-action').on('click', function () {
             let drawingLink = document.createElement("A")
             $(drawingLink).text('View drawing '+index.toString())
             $(drawingLink).addClass('drawing-link')
-            $(drawingLink).attr('href', '/erp/files/' + drawing)
+            $(drawingLink).attr('href', '/files/' + drawing)
             $(drawingLink).attr('target', '_blank')
             $('.drawing-links').append(drawingLink)
             index++;
@@ -155,9 +155,9 @@ $('.approve_drawing_btn').on('click', function () {
             if (confirm('Are you sure you want to change the status of this to in progress. Older drawings will be removed')) {
                 $.ajax({
                     type: "POST",
-                    url: "/erp/mark_drawing_in_progress",
+                    url: "/mark_drawing_in_progress",
                     success: function (data) {
-                        window.location.href = '/erp/drawings'
+                        window.location.href = '/drawings'
                     },
                     error: function (error) {
                         console.log(error)
@@ -178,9 +178,9 @@ $('.approve_drawing_btn').on('click', function () {
             if (confirm('Are you sure you want to change the status of this to pending. Older drawings will be removed')) {
                 $.ajax({
                     type: "POST",
-                    url: "/erp/change_drawing_status",
+                    url: "/change_drawing_status",
                     success: function (data) {
-                        window.location.href = '/erp/drawings'
+                        window.location.href = '/drawings'
                     },
                     error: function (error) {
                         console.log(error)
@@ -193,9 +193,9 @@ $('.approve_drawing_btn').on('click', function () {
         } else {
             $.ajax({
                 type: "POST",
-                url: "/erp/change_drawing_status",
+                url: "/change_drawing_status",
                 success: function (data) {
-                    window.location.href = '/erp/drawings'
+                    window.location.href = '/drawings'
                 },
                 error: function (error) {
                     console.log(error)
@@ -215,9 +215,9 @@ $('.approve_drawing_btn').on('click', function () {
             if (confirm('Are you sure you want to change the status of this to not applicable. Older drawings will be removed')) {
                 $.ajax({
                     type: "POST",
-                    url: "/erp/change_drawing_status",
+                    url: "/change_drawing_status",
                     success: function (data) {
-                        window.location.href = '/erp/drawings'
+                        window.location.href = '/drawings'
                     },
                     error: function (error) {
                         console.log(error)
@@ -230,9 +230,9 @@ $('.approve_drawing_btn').on('click', function () {
         } else {
             $.ajax({
                 type: "POST",
-                url: "/erp/change_drawing_status",
+                url: "/change_drawing_status",
                 success: function (data) {
-                    window.location.href = '/erp/drawings'
+                    window.location.href = '/drawings'
                 },
                 error: function (error) {
                     console.log(error)

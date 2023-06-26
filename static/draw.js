@@ -179,7 +179,7 @@ async function getAndPutAnnexure() {
   wo_value = parseInt($('.value').text().trim())
   $.ajax({
     type: "POST",
-    url: "/erp/get_milsetones",
+    url: "/get_milsetones",
     async: true,
     data: formData,
     cache: false,
@@ -234,7 +234,7 @@ async function saveSign() {
   let pngImageBytes = canvas.toDataURL("image/png");
 
 
-  const url = 'https://app.buildahome.in/erp/static/Standard_WO.pdf'
+  const url = 'https://app.buildahome.in/static/Standard_WO.pdf'
   const arrayBuffer = await fetch(url).then(res => res.arrayBuffer())
   const pdfDoc = await PDFDocument.load(arrayBuffer)
 
@@ -350,7 +350,7 @@ async function saveSign() {
     height: 50,
   })
 
-  const sealUrl = 'https://app.buildahome.in/erp/static/seal.png'
+  const sealUrl = 'https://app.buildahome.in/static/seal.png'
   const sealImgBytes = await fetch(sealUrl).then((res) => res.arrayBuffer())
 
   const sealImg = await pdfDoc.embedPng(sealImgBytes)
@@ -389,9 +389,9 @@ async function saveSign() {
 
   $.ajax({
     type: "POST",
-    url: "/erp/upload_signed_wo",
+    url: "/upload_signed_wo",
     success: function (data) {
-      window.location.href = '/erp/view_unsigned_work_order'
+      window.location.href = '/view_unsigned_work_order'
     },
     error: function (error) {
       console.log(error)

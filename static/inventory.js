@@ -2,7 +2,7 @@ $('#get_procurement').on('click', function(){
     const project = $("#project").val()
     const material = $("#material").val()
     if(project.length && material.length) {
-        window.location.href = '/erp/view_inventory?project_id='+project.toString()+'&material='+material.toString()        
+        window.location.href = '/view_inventory?project_id='+project.toString()+'&material='+material.toString()        
     }
 })
 
@@ -11,7 +11,7 @@ $('#get_procurement').on('click', function(){
 $("#update_kyp_material").on('click', function(){
     const project = $("#project").val()
     if (project.length) {
-        window.location.href = '/erp/kyp_material?project_id='+project.toString()        
+        window.location.href = '/kyp_material?project_id='+project.toString()        
     }
 })
 

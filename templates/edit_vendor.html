@@ -8,7 +8,7 @@
                     <h4>Vendor details</h4>
                 </div>
             </div>
-            <form action="/erp/edit_vendor" method="post" enctype="multipart/form-data">
+            <form action="/edit_vendor" method="post" enctype="multipart/form-data">
                 <div class="row mx-0 mb-3 form-group">
                     <div class="col-6">
                         <label>Name</label>
@@ -126,7 +126,7 @@
                     <div class="col-6">
                         <div class="mb-2">
                             <img alt="" height="150" width="150"
-                                 src="/erp/files/vendor_dp_{{request.args['vendor_id']}}" alt=""
+                                 src="/files/vendor_dp_{{request.args['vendor_id']}}" alt=""
                                  onerror="this.src='./static/profile_picture.PNG'"
                                  style="border-radius: 50%">
                             

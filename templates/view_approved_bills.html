@@ -50,11 +50,11 @@
     <div class="d-flex justify-content-end">
         {% if session['role'] == 'Super Admin' %}
          <a class="btn btn-dark bg-indigo text-white"
-           href="/erp/export_bills?first_bill_id={{first_bill_id}}"
+           href="/export_bills?first_bill_id={{first_bill_id}}"
            onclick="return confirm('Are you sure you want to export these bills?')">Export
         </a>
         {% endif %}
-        <a class="btn btn-dark bg-indigo text-white ml-2" targer="_blank" href="/erp/static/bills.xls">Download</a>
+        <a class="btn btn-dark bg-indigo text-white ml-2" targer="_blank" href="/static/bills.xls">Download</a>
     </div>
 
 
