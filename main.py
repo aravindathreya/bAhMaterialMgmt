@@ -856,7 +856,7 @@ def transfer_image_to_s3():
 def index():
     if 'email' not in session:
         flash('You need to login to continue', 'danger')
-        session['last_route'] = '/erp'
+        session['last_route'] = '/'
         return redirect('/login')
     
     projects = get_projects()
@@ -1048,7 +1048,7 @@ def login():
                 del session['last_route']
                 return redirect(last_route)
             else:
-                return redirect('/erp')
+                return redirect('/')
         else:
             return render_template('login.html')
     else:
@@ -1081,7 +1081,7 @@ def login():
                 
                 session['projects'] = get_projects_for_current_user()
                 flash('Logged in successfully', 'success')
-                return redirect('/erp')
+                return redirect('/')
             else:
                 flash('Incorrect credentials', 'danger')
                 return redirect('/login')
