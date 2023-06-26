@@ -46,7 +46,7 @@ import uuid
 # Last labour stage id 412
 app = Flask(__name__)
 # Sql setup
-app.config['MYSQL_HOST'] = 'localhost'
+app.config['MYSQL_HOST'] = '166.62.6.102'
 app.config['MYSQL_USER'] = 'buildahome'
 app.config['MYSQL_PASSWORD'] = 'build*2019'
 app.config['MYSQL_DB'] = 'buildahome2016'
