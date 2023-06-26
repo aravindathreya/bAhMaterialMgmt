@@ -12,3 +12,4 @@ xlutils~=2.0.0
 selenium~=4.0.0
 celery
 Pillow
+python-dotenv

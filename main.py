@@ -25,6 +25,8 @@ from io import BytesIO
 import random
 import json
 import uuid
+from dotenv import load_dotenv
+
 
 
 
@@ -52,10 +54,10 @@ app.config['MYSQL_PASSWORD'] = 'build*2019'
 app.config['MYSQL_DB'] = 'buildahome2016'
 app.config['UPLOAD_FOLDER'] = '../static/files'
 app.config['MAX_CONTENT_LENGTH'] = 1000 * 1024 * 1024
-app.config['S3_SECRET'] = os.environ.get('S3_SECRET')
-app.config['S3_KEY'] = os.environ.get('S3_KEY')
-app.config['S3_BUCKET'] = os.environ.get('S3_BUCKET')
-app.config['S3_LOCATION'] = os.environ.get('S3_LOCATION')
+app.config['S3_SECRET'] = os.getenv('S3_SECRET')
+app.config['S3_KEY'] = os.getenv('S3_KEY')
+app.config['S3_BUCKET'] = os.getenv('S3_BUCKET')
+app.config['S3_LOCATION'] = os.getenv('S3_LOCATION')
 app.config['CELERY_BROKER_URL'] = 'redis://127.0.0.1:6379/0'
 app.config['CELERY_RESULT_BACKEND'] = 'redis://127.0.0.1:6379/0'
 
@@ -844,7 +846,7 @@ def transfer_image_to_s3():
             '/home/buildahome2016/public_html/app.buildahome.in/api/images/' + last_file,
             'rb') as fp:
         file = FileStorage(fp, content_type='image/' + last_file.split('.')[-1])
-        res = send_to_s3(file, os.environ.get('S3_BUCKET'), 'migrated/' + last_file)
+        res = send_to_s3(file, os.getenv('S3_BUCKET'), 'migrated/' + last_file)
         if res == 'success':
             os.remove('/home/buildahome2016/public_html/app.buildahome.in/api/images/' + last_file)
     return ''
